@@ -1,5 +1,21 @@
 body { padding-top: 70px; }
 
+#news-api {
+  display: flex;
+}
+
+footer {
+  height: 50px;
+  background: rgba(0, 0, 0, .8);
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+footer >  p > a {
+  color: white;
+}
+
 .articles-container {
   display: flex;
   flex-direction: row;

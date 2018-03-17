@@ -15,13 +15,22 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            News App
+          </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Sources</a></li>
+          <li><a href="#">Search</a></li>
+        </ul>
       </div>
     </nav>
     <%= yield %>
-    <footer>
-      Powered by...
+    <footer id="news-api" class="text-center">
+      <p>Powered by <a href="https://newsapi.org/">News Api</a></p>
     </footer>
   </body>
 </html>
