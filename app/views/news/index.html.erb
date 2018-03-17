@@ -1,0 +1,9 @@
+<h1 class="text-center">Top Headlines</h1>
+
+<div class="articles-container">
+  <% @articles.each do |a| %>
+    <section class="article" data-url=<%= a['url'] %> >
+      <%= image_tag(a['urlToImage'] || @image_placeholder, class: 'article-image') %> 
+    </section>
+  <% end %>
+</div>
