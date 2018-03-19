@@ -1,18 +1,3 @@
 <h1 class="text-center">Top Headlines</h1>
 
-
-<div class="container">
-  <div class ="row">
-    <% @articles.each do |x| %>
-      <div class="card col-lg-4 col-md-6 col-sm-12">
-        <span style="font-weight: bold;"> <%= x['source']['name'] %>     </span>
-        <%= image_tag(x['urlToImage'] || @image_placeholder, class: 'card-img-top') %>  
-        <div class="card-body">
-          <h5 class="card-title"><% x['title'] %></h5>
-          <p class="card-text"> <%= x['description'] %></p>
-          <a href="<%= x['url'] %>" class="btn btn-primary">View</a>
-        </div>
-      </div>
-    <% end %>
-  </div>  
-</div>
+<%= render 'articles' %>

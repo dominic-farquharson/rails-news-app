@@ -1,4 +1,4 @@
-/* body { padding-top: 70px; } */
+body { padding-top: 70px; }
 
 #news-api {
   display: flex;
@@ -10,6 +10,9 @@ footer {
   color: white;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 footer >  p > a {
@@ -18,4 +21,8 @@ footer >  p > a {
 
 .card-img-top:hover {
   cursor:pointer;
+}
+
+.container {
+  padding-bottom: 100px;
 }
