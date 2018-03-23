@@ -1,13 +1,15 @@
 <div class="container">
   <div class ="row">
     <% @articles.each do |x| %>
-      <div class="card col-lg-4 col-md-6 col-sm-12">
-        <span style="font-weight: bold;"> <%= x['source']['name'] %>     </span>
+      <div class="card col-lg-4 col-md-6 col-sm-12 article">
+
+        <span data-url="<%= x['url'] %>" class="article-title" title="<%= x['title']%>" style="font-weight: bold;"> <%= x['title'] %>     </span>
+
+        <span><%= x['source']['name'] %></span>
         <%= image_tag(x['urlToImage'] || @image_placeholder, class: 'card-img-top') %>  
         <div class="card-body">
           <h5 class="card-title"><% x['title'] %></h5>
           <p class="card-text"> <%= x['description'] %></p>
-          <a href="<%= x['url'] %>" class="btn btn-primary">View</a>
         </div>
       </div>
     <% end %>
