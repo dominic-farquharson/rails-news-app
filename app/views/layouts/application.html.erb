@@ -16,23 +16,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="/">News App</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse align-right" id="navbarSupportedContent">
-        <ul class="nav navbar-right navbar-nav justify-content-center ml-md-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/search">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <%= render 'layouts/nav' %>
     <%= yield %>
     <footer id="news-api" class="text-center footer">
       <p>Powered by <a href="https://newsapi.org/">News Api</a></p>
