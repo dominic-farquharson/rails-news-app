@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_signed_out, only: [:new, :create]
-  before_action :ensure_signed_in, only: [:show]
+  before_action :ensure_signed_in, only: [:show, :account]
 
   def new
     @user = User.new
@@ -8,11 +8,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(create_user_params)
-
     if @user.save
       sign_in(@user)
       flash[:notice] = 'Welcome to the NewsApp'
-      redirect_to root
+      redirect_to :root
     else 
       flash[:error] = @user.errors.full_messages.join(', ')
       render :new
@@ -21,6 +20,10 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+  end
+
+  def account
+    render json: current_user
   end
 
   private
