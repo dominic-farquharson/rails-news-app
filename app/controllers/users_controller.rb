@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   def account
     @user = current_user
-    render json: current_user
   end
 
   private
