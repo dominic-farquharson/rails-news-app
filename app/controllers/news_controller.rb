@@ -5,6 +5,9 @@ class NewsController < ApplicationController
     # placeholder for images that do not exist
     @image_placeholder = 'https://placehold.it/50x50'
     @articles ||= []
+    if current_user 
+      @bookmark = current_user.bookmarks.new
+    end
   end
 
   def search
