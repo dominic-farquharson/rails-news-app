@@ -18,11 +18,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user
-  end
-
   def account
+    @user = current_user
     render json: current_user
   end
 
