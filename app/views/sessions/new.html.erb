@@ -8,7 +8,13 @@
       <%= form.password_field :password, placeholder: 'password', required: true, class: 'form-control' %>
     </div>
     <%= submit_tag 'Sign in', class: 'btn btn-outline-primary align-self-center' %>
+    <br />
+    <br />
+    <div class="text-danger">
+      <%= flash[:error] %>
+    </div>
   <% end %>
 
+  <hr />
   <div>Don't have an account? Click <a href="/signup">here</a> to sign up.</div>
 </section>
