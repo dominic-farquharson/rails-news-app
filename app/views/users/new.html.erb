@@ -1,0 +1,35 @@
+<section class="container col-lg-6 col-md-8 col-sm-11">
+  <h3 class="text-center">Create an Account</h3>
+
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <%= f.text_field :username, placeholder: 'username', required: true, class: 'form-control'  %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, 
+            placeholder: 'password', 
+            require: true, 
+            minLength: User::PASSWORD_LENGTH.begin, 
+            maxLength: User::PASSWORD_LENGTH.end,
+            class: 'form-control'
+      %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :first_name, placeholder: 'first name', required: true, class: 'form-control'  %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :last_name, placeholder: 'last name', required: true, class: 'form-control'  %>
+    </div>
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: 'email address', required: true, class: 'form-control'  %>
+    </div>
+    <%= submit_tag 'Create Account', class: 'btn btn-outline-primary align-self-center' %>
+    <%= flash[:error] %>
+  <% end %>
+
+  <hr />
+  <div>
+    <p>Already have an account? Click <a href="/login">here</a> to sign in.</p> 
+  </div>
+</section>
+
