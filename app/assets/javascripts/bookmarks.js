@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   const $modal = $('#create-bookmark')
 
   $modal.on('show.bs.modal', function (event) {
@@ -8,12 +8,24 @@ $(function() {
     const modal = $(this);
     const $article = $(`#article-${key}`); // grab article key
     const href = $article.data('url'); // grab url
+
+    window.modal = modal;
+    console.log(modal, $article.attr('title'), href, 'submitted')
     
     modal.find('#bookmark_link').text(href); // set placeholder
     modal.find('#bookmark_title').val($article.attr('title')); // set placeholder
     $('#bookmark_link_val').val(href); // set val of hidden input
   })
 
+
+  const bookmarks = document.querySelectorAll('.bookmark-title');
+  bookmarks.forEach(el => el.addEventListener('click', openArticle));
+    
+  function openArticle(e) {
+    window.open(this.dataset.url)
+  }
+
+  // create bookmark
   $('.create-bookmark-btn').on('click', (e) => {
     const title = $('#bookmark_title');
     const link = $('#bookmark_link');
@@ -46,5 +58,4 @@ $(function() {
       }
     });
   });
-
 });

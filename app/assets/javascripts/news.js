@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).on('turbolinks:load', function() {
   const articles = document.querySelectorAll('.article-title');
   articles.forEach(el => el.addEventListener('click', openArticle));
   

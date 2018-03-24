@@ -14,6 +14,7 @@
           <p class="card-text">
             <%= x.note %>
           </p>
+          <%= button_to 'x', bookmark_path(x), class: 'bookmark-delete-btn btn', method: :delete, data: {confirm: 'are you sure you want to delete this?'}  %>
         </div>
       <% end %>
     </div>
