@@ -3,7 +3,7 @@ class User < ApplicationRecord
   
   # validations
   validates_presence_of :username
-  validates :password, length: PASSWORD_LENGTH, allow_nil: false
+  validates :password, length: PASSWORD_LENGTH, allow_nil: true # skip validation if value is nil
 
   attr_reader :password
 
