@@ -44,5 +44,12 @@ footer >  p > a {
   margin-bottom: 50px;
 }
 
+.bookmark {
+
+}
+
+.bookmark:hover {
+  cursor: pointer;
+}
 
 
