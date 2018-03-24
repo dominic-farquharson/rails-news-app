@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :ensure_signed_in, only: [:destroy]
+  before_action :ensure_signed_out, only: [:new, :create]
+  
   # render sign in form
   def new
     @user = User.new
@@ -14,7 +17,7 @@ class SessionsController < ApplicationController
     if user
       sign_in(user)
       flash[:notice] = "Welcome #{username}"
-      redirect_to root
+      redirect_to :root
     else
       flash[:error] = 'Invalid username and / or password'
       @user = User.new
@@ -22,14 +25,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  def account
-    render json: current_user
-  end
-
   # log out
   def destroy
     sign_out
     flash[:notice] = 'You have succesfully signed out.'
-    redirect_to root
+    redirect_to :root
   end
 end
