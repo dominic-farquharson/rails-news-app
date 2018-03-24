@@ -1,24 +1,24 @@
-# README
+# News App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails app that allows you to view the latest articles from the NewsApi. You can sign in to bookmark an article. 
 
-Things you may want to cover:
+![News App](./assets/news-app.png)
 
-* Ruby version
+## Installation Instructions
 
-* System dependencies
+- Fork / clone this repository.
+- cd into the downloaded directory.
+- Install dependencies
+  - `bundle install`
+- Create database and run migrations.
+  - `rails db:create && rails db:migrate`  
+- Start server 
+  - `rails server`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies Used
+- Ruby
+- Ruby on Rails
+- HTML
+- CSS
+- JS
+- [News Api](https://newsapi.org/)
