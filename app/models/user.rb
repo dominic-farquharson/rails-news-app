@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates_presence_of :username
   validates :password, length: PASSWORD_LENGTH, allow_nil: true # skip validation if value is nil
 
+  has_many :bookmarks
+  
   attr_reader :password
 
   # class method
