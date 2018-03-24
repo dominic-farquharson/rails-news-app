@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  # sign in user
+  def sign_in(user)
+    token = SecureRandom.urlsafe_base64 # create random 22 char string
+    session[:session_token] = token # store token in session
+    user.update_attribute(:session_token, token)
+
+  end
+
   private
 
   def fetch_news
