@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'news#index'
+  root 'news#index'
+  # get '/', to: 'news#index'
   get '/search', to: 'news#search'
+  get '/account', to: 'users#account'
+  
 
-  resource :session, only: [:new, :create, :destroy]
+  get '/login', to: 'sessions#new'
+  get '/signup', to: 'users#new'
+
+  resources :users, only: [:show, :create]
+  resource :session, only: [:create, :destroy]
+  resources :bookmarks
 end
