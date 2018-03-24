@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   before_action :ensure_signed_in
   
   def index
-    @bookmarks = current_user.bookmarks
+    @bookmarks = current_user.bookmarks.order(id: :desc)
   end
 
   def create
@@ -19,6 +19,12 @@ class BookmarksController < ApplicationController
         success: false
       }
     end
+  end
+
+  def destroy
+    @bookmark = current_user.bookmarks.find(params[:id])
+    @bookmark.destroy!
+    redirect_to bookmarks_path
   end
 
   private

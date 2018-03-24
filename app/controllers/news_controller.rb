@@ -15,6 +15,10 @@ class NewsController < ApplicationController
     query = params[:q]
     @articles = fetch_news_query query unless !query
     @articles ||= [] # empty array if no query
+
+    if current_user 
+      @bookmark = current_user.bookmarks.new
+    end
   end
 
   private
