@@ -9,6 +9,23 @@ class ApplicationController < ActionController::Base
 
   end
 
+  # finding user
+  def current_user 
+    @current_user ||= find_current_user
+  end
+
+  def find_current_user 
+    token = session[:session_token]
+    token && User.find_by(session_token: token)
+  end
+
+  def sign_out
+    # delete token from session
+    session.delete(:session_token)
+    # delete token from db
+    current_user.update_attribute(:session_token , nil)
+  end
+
   private
 
   def fetch_news
