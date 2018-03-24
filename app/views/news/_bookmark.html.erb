@@ -1,0 +1,34 @@
+<div class="modal fade" id="create-bookmark" tabindex="-1" role="dialog" aria-labelledby="createBookmark" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Bookmark</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= form_for @bookmark, html: {id: 'create-bookmark-form'}  do |f|%>
+          <div class="form-group">
+            <%= f.label :title, class: 'form-control-label' %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :link, class: 'form-control-label' %>
+            <p class="form-control" id="bookmark_link" name="link"></p>
+            <%= f.hidden_field :link, class: 'form-control', id: 'bookmark_link_val' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :note, class: 'form-control-label' %>
+            <%= f.text_area :note, class: 'form-control' %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary create-bookmark-btn">Create Bookmark</button>
+          </div>
+        <% end %>
+      
+    </div>
+  </div>
+</div>
