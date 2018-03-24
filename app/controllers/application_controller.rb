@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   def ensure_signed_in 
     return if current_user
     flash[:error] = 'Please sign in to view this page'
-    redirect_to :root
+    redirect_to :login
   end
 
   def ensure_signed_out

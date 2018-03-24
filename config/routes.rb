@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create]
   resource :session, only: [:create, :destroy]
-  resources :bookmarks
+  resources :bookmarks, only: [:index, :create, :destroy, :update]
 end
