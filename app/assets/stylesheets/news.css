@@ -58,3 +58,13 @@ footer >  p > a {
   height: 50vh;
   min-height: 300px;
 }
+
+.bookmark-delete-btn {
+  color: red;
+  position: absolute;
+  background: none;
+  border: none;
+  top: 10%;
+  right: 0;
+  font-weight: bold;
+}

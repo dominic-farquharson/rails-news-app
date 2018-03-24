@@ -27,4 +27,6 @@
   </div>  
 </div>
 
-<%= render 'bookmark' %>
+<% if current_user %>
+  <%= render 'bookmark' %>
+<% end %>
